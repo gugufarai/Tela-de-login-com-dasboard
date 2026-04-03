@@ -40,7 +40,7 @@ if (formCadastro) {
     const password = document.getElementById("password").value;
     
     if (nome !== "" && email !== "" && password !== "") {
-      window.location.href = "mensagem/mensagem.html";
+      window.location.href = "mensagem.html";
     } else {
       alert("Preencha todos os campos!");
     }
@@ -59,7 +59,7 @@ if (formLogin) {
     const password = document.getElementById("password").value;
     
     if (email !== "" && password !== "") {
-      window.location.href = "mensagem/mensagem2.html";
+      window.location.href = "mensagem2.html";
     } else {
       alert("Preencha todos os campos!");
     }
