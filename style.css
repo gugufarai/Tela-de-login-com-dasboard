@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://i.postimg.cc/ZnprYcg7/IMG-1532.jpg');
+  background-position: center;
+background-size: cover;
+}
+
+/* Título animado */
+strong {
+  position: absolute;
+  top: 40px;
+  color: #fff;
+  font-size: 40px;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: slideDown 1s ease forwards;
+}
+
+/* FORM GLASS */
+form {
+  background: rgba(255, 255, 255, 0.08); /* transparente */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+
+  transform: scale(0.8);
+  opacity: 0;
+  animation: zoomIn 0.8s ease forwards;
+
+  color: #fff;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #ddd;
+  transition: 0.3s;
+}
+
+/* Inputs GLASS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.1);
+  color: #000;
+
+  transition: 0.3s;
+}
+
+/* Placeholder */
+input::placeholder {
+  color: #000;
+}
+
+/* Focus */
+input:focus {
+  border-color: #00c853;
+  box-shadow: 0 0 10px rgba(0,200,83,0.4);
+  transform: scale(1.03);
+  background: rgba(255,255,255,0.2);
+}
+
+/* Label ativa */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  color: #00c853;
+}
+
+/* Botão GLASS */
+.button {
+  width: 100%;
+  padding: 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Link */
+a {
+  color: #ccc;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  gap:5px;
+}
+
+a span {
+  color: #00c853;
+}
+
+/* Shake (erro) */
+.erro {
+  animation: shake 0.3s;
+  border-color: red !important;
+}
+
+/* RESPONSIVO */
+@media (max-width: 500px) {
+  form {
+    padding: 20px;
+  }
+}
+
+/* ANIMAÇÕES */
+@keyframes zoomIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
